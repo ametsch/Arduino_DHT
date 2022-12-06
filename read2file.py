@@ -7,21 +7,26 @@ import os
 if not os.path.exists('./output/'):
     os.mkdir('./output')
 
-global id
+
+def int_in_repeat(prompt: str) -> int:
+    val = None
+    try:
+        val = int(input(prompt))
+    except:
+        print('Invalid entry, must be an INT')
+        val = int_in_repeat(prompt)
+    return val
+
+global id 
 id = 0
+points = 0
+columns = ['degF', 'percentHumidity', 'rawLight']
 
 port = input('COM Port: ')
-delay_reads = int(input('Delay (in reads): '))
-read_count = int(input('Desired data point count: '))
+delay_reads = int_in_repeat('Delay (in reads): ')
+read_count = int_in_repeat('Desired data point count: ')
 
 li = {'degF':[],'percentHumidity':[],'rawLight':[]}
-
-
-points = 0
-
-
-
-
 
 now = dt.now()
 pth = f'{now.day}-{now.month}-{now.year}--{now.hour}-{now.minute}-{now.second}'
@@ -57,8 +62,7 @@ with Serial() as ser:
             pass
         id += 1
 
-df = pd.DataFrame(data=li, columns=['degF', 'percentHumidity',
-                  'rawLight'], dtype=float)
+df = pd.DataFrame(data=li, columns=columns, dtype=float)
 
 plot = df.plot()
 plt.minorticks_on()
@@ -66,6 +70,5 @@ plt.xlabel('Data Point Number')
 plt.ylabel('Data Value')
 
 plt.savefig(f'{graph_name}.png')
-plt.savefig(f'{graph_name}.pdf')
 plt.show()
 
