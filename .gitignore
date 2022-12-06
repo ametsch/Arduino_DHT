@@ -1,0 +1,11 @@
+output
+dist
+build
+build.bat
+paper.*
+fritzing layout.png
+*.fzz
+my_prog.7z
+.vscode
+*.spec
+*.exe
