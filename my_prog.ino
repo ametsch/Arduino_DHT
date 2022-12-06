@@ -5,8 +5,7 @@
 #define DHTTYPE DHT11   // DHT 11
 #define DHTPIN 5     // Digital pin connected to the DHT sensor
 
-const int analogInPin = A0;  // ESP8266 Analog Pin ADC0 = A0
-
+const int analogInPin = A0;
 DHT dht(DHTPIN, DHTTYPE);
 
 
