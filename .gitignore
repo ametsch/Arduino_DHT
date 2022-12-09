@@ -2,7 +2,7 @@ output
 dist
 build
 build.bat
-paper.*
+paper*
 fritzing layout.png
 *.fzz
 my_prog.7z
