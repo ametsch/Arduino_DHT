@@ -40,7 +40,7 @@ csv_name = f'./output/{pth}/out.csv'
 graph_name = f'./output/{pth}/graph'
     
 with Serial() as ser:
-    ser.baudrate = 115200
+    ser.baudrate = 9600
     ser.port = port
     ser.open()
     
