@@ -1,28 +1,4 @@
 <!--- Copyright 2022 Aaron Metsch (https://github.com/ametsch) --->
-<style type="text/css">
-   @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
-
-   * {
-      font-family: default;
-   }
-   code {
-      font-family: 'Source Code Pro', monospace;
-   }
-   ul {
-      list-style-type: square;
-   }
-   ol {
-      list-style-type: decimal;
-   }
-   a:hover, a:active {
-      color: #A600FF;
-   }
-   a:link, a:visited {
-      color: #002AFF;
-   }
-   
-</style>
-
 # Arduino temperature, humidity, and light level monitor: How to
 ### By Aaron Metsch ([https://github.com/ametsch](https://github.com/ametsch))
 ## Required Materials:
