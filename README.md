@@ -36,19 +36,19 @@ ___
 
  4. Code explanation:
     1. Start by including the neccesary libraries at the top of the file:
-         ```arduino cpp
+         ```cpp
             #include "DHT.h" // Include DHT library
             #include "DHT_U.h" // Include DHT library
             #include "string.h" // Include arduino string library
          ```
     2. Next we define some constants (if you are not using a DHT11 replace it with the type of DHT you are using):
-         ```arduino cpp
+         ```cpp
             #define DHTTYPE DHT11 // Define DHT type
             #define DHTPIN 5 // The arduino pin which is connected to the DHT data pin
             const int lightSensorPin = A0; // Define the arduino pin that the light sensor is connected to
          ```
     3. Next we create the `setup` function to intialize everything:
-         ```arduino cpp
+         ```cpp
             void setup() {
                Serial.begin(9600); // initialize the serial communication protocol
                dht.begin(); // initialize the DHT
@@ -58,7 +58,7 @@ ___
       <div class="page"></div>
 
     4. Now we add the `loop` function to tell the arduino to constantly check the temperature, humidity, and light level and print it to the serial monitor:
-         ```arduino cpp
+         ```cpp
             void loop() {
                double f = dht.readTemperature(true);
                double h = dht.readHumidity();
